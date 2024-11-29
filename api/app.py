@@ -3,7 +3,7 @@ from flask_cors import CORS
 from services.ong_service import OngService
 
 app = Flask(__name__)
-CORS(app)  # Permite requisições de qualquer origem (global)
+CORS(app)
 ong_service = OngService()
 
 @app.route('/search', methods=['GET'])

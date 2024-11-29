@@ -1,7 +1,6 @@
-// Função para manipular a exibição das janelas (escopo global)
 function morphic_window(windowId) {
     console.log(`Abrindo janela com ID: ${windowId}`);
-    alert(`Você clicou na janela: ${windowId}`); // Substitua esta linha pelo comportamento real desejado
+    alert(`Você clicou na janela: ${windowId}`); 
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -12,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Função para buscar ONGs na API
     async function fetchOngs(query) {
         try {
-            const response = await fetch(`http://127.0.0.1:5000/search?q=${encodeURIComponent(query)}`); // Porta correta
+            const response = await fetch(`https://excedentes-agricolas.vercel.app/search?q=${encodeURIComponent(query)}`); // Porta correta
             if (!response.ok) {
                 throw new Error("Erro ao buscar ONGs");
             }
@@ -73,8 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        const ongs = await fetchOngs(query); // Busca as ONGs na API
-        console.log("Resposta da API:", ongs); // Log da resposta da API
-        updateOngTab(ongs); // Atualiza a aba com os resultados
+        const ongs = await fetchOngs(query);
+        console.log("Resposta da API:", ongs);
+        updateOngTab(ongs);
     });
 });
