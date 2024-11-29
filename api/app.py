@@ -6,6 +6,10 @@ app = Flask(__name__)
 CORS(app)
 ong_service = OngService()
 
+@app.route('/')
+def home():
+    return "Hello World!"
+
 @app.route('/search', methods=['GET'])
 def search_ongs():
     query = request.args.get('q', '')
