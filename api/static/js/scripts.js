@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Função para buscar ONGs na API
     async function fetchOngs(query) {
         try {
-            const response = await fetch(`http://127.0.0.1:5000/search?q=${encodeURIComponent(query)}`); // Porta correta
+            const response = await fetch(`https://excedentes-agricolas-api.vercel.app/search?q=${encodeURIComponent(query)}`); // Porta correta
             if (!response.ok) {
                 throw new Error("Erro ao buscar ONGs");
             }
