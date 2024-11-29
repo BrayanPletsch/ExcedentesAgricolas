@@ -1,11 +1,11 @@
 {
-    "version": 2,
-    "functions": {
-      "api/*.py": {
-        "runtime": "python3.8"
+  "version": 2,
+  "functions": {
+      "api/app.py": {
+          "runtime": "python"
       }
-    },
-    "routes": [
-      { "src": "/(.*)", "dest": "/api/app" }
-    ]
-  }
+  },
+  "routes": [
+      { "src": "/(.*)", "dest": "api/app.py" }
+  ]
+}
